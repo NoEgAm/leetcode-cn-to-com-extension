@@ -1,0 +1,36 @@
+{
+  "name": "Leetcode cn to com Extension",
+  "description": "Go to global site with one click",
+  "author": "NoEgAm",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "manifest_version": 2,
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      }
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [{
+    "matches": [
+      "https://leetcode-cn.com/problems/*"
+    ],
+    "js": ["jump.js"]
+  }],
+  "permissions": [
+    "*://*.leetcode-cn.com/*"
+  ]
+}
